@@ -179,17 +179,27 @@ st.markdown("""
 <h1 style='text-align:center;
 color:white;
 font-size:52px;
-font-weight:800;'>
+font-weight:800;
+margin-bottom:5px;'>
 
 🚀 AI Resume Generator
+
 </h1>
+
+<p style='text-align:center;
+font-size:16px;
+color:#BDBDBD;
+margin-top:0px;'>
+
+This app helps you build customized professional resumes with latest job apply links.
+
+</p>
 """, unsafe_allow_html=True)
 
 st.markdown("""
 <p style='text-align:center;
 font-size:20px;
 color:#BDBDBD;'>
-
 
 Build ATS Friendly Resume • Latest Jobs • AI Powered
 
