@@ -45,6 +45,11 @@ location= st.sidebar.multiselect("Select Location" , options=options)
 profile_op=["data analytics", "full-stack-dev","AI-Engineer","genAi-dev","data scientist"]
 profile=st.sidebar.multiselect("select profile", options=profile_op)
 
+#==============GET USER INFO====================
+st.markdown("""###GET USER INFO""")
+user_info=st.text_area(""" write your resume description: """)
+
+
 
 
 #===========MODEL CREATION==============
