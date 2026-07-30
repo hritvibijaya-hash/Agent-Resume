@@ -169,12 +169,31 @@ footer{
 # to show web app complete page layout
 st.set_page_config(layout="wide")
 
-# to give title
+# ===============to give title==================
 
 
-st.sidebar.title("fill important detail")
+st.sidebar.markdown("""
+<h2 style="
+text-align:center;
+color:#4F8CFF;
+font-size:24px;
+font-weight:700;
+margin-bottom:5px;
+">
+⚙️ Resume Settings
+</h2>
 
+<p style="
+text-align:center;
+color:#BDBDBD;
+font-size:13px;
+margin-top:0px;
+">
+Customize your resume & job search
+</p>
+""", unsafe_allow_html=True)
 
+===================================================
 st.markdown("""
 <div style="text-align:center;">
 
@@ -201,7 +220,7 @@ This app helps you build customized professional resumes with latest job apply l
 
 </div>
 """, unsafe_allow_html=True)
-
+=====================================================================
 st.markdown("""
 <p style='text-align:center;
 font-size:20px;
@@ -211,6 +230,8 @@ Build ATS Friendly Resume • Latest Jobs • AI Powered
 
 </p>
 """, unsafe_allow_html=True)
+==================================================
+#=============image=================
 
 st.image("bg.png")
 
