@@ -239,7 +239,7 @@ Build ATS Friendly Resume • Latest Jobs • AI Powered
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-col1, col2, col3 = st.columns([1.5,5,1.5])
+col1, col2, col3 = st.columns([1, 7, 1])
 
 with col2:
     st.image(
