@@ -193,11 +193,10 @@ Customize your resume & job search
 """, unsafe_allow_html=True)
 
 # Sidebar image
-with col2:
-    st.image(
-        "bt.png",
-        use_container_width=True
-    )
+st.sidebar.image(
+    "bt.png",
+    use_container_width=True
+)
 #============================================================================================heading==============================================================================
 st.markdown("""
 <div style="text-align:center;">
