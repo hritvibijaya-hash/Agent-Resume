@@ -171,7 +171,6 @@ st.set_page_config(layout="wide")
 
 # to give title
 
-st.write("""this app helps user to build customized professional resume with latest job apply links""")
 
 st.sidebar.title("fill important detail")
 
@@ -183,6 +182,8 @@ font-size:52px;
 font-weight:800;'>
 
 🚀 AI Resume Generator
+
+st.image("bg.png")
 
 </h1>
 """, unsafe_allow_html=True)
