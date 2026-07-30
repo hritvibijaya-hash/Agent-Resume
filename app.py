@@ -38,6 +38,13 @@ elif all(all_API):
 else:
     st.info("pass all API keys")
 
+#MULTISELECT OPTION
+options= ["delhi","mumbai","pune","banglore","gurugram/gurgaon"]
+location= st.sidebar.multiselect("Select Location" , options=options)
+
+profile_op=["data analytics", "full-stack-dev","AI-Engineer","genAi-dev","data scientist"]
+profile=st.sidebar.multiselect("select profile", options=profile_op)
+
 
 
 #===========MODEL CREATION==============
