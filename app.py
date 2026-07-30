@@ -344,15 +344,6 @@ def get_jobs(agent,Location = "Noida,Delhi",Profile = "ML Engineer"):
   return code
 
 
-#==========image generation===========
-
-st.markdown("<br>", unsafe_allow_html=True)
-
-col1,col2,col3 = st.columns([1,6,1])
-
-with col2:
-    st.image("bg.png", use_container_width=True)
-
 
 # ===========👇USER INFORMATION + RESUME BUTTON==================
 
