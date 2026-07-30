@@ -177,6 +177,26 @@ st.image("bg.png")
 st.sidebar.title("fill important detail")
 st.sidebar.image("bg.png")
 
+st.markdown("""
+<h1 style='text-align:center;
+color:white;
+font-size:52px;
+font-weight:800;'>
+
+🚀 AI Resume Generator
+
+</h1>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<p style='text-align:center;
+font-size:20px;
+color:#BDBDBD;'>
+
+Build ATS Friendly Resume • Latest Jobs • AI Powered
+
+</p>
+""", unsafe_allow_html=True)
 #============API KEYS===================
 
 TAVILY_API_KEY = st.sidebar.text_input("Tavily-API",type="password")
