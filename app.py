@@ -352,6 +352,63 @@ if st.button("generate resume"):
         st.html(code,width="stretch",
                 unsafe_allow_javascript=True)
         st.divider()
+
+
+
+
+st.markdown("<br>", unsafe_allow_html=True)
+
+col1,col2,col3 = st.columns([1,6,1])
+
+with col2:
+    st.image("bg.png", use_container_width=True)
+
+
+st.markdown("""
+<h2 style='color:#4F8CFF'>
+👤 User Information
+</h2>
+""", unsafe_allow_html=True)
+
+user_info = st.text_area(
+    "",
+    height=220,
+    placeholder="""
+Name:
+Email:
+Phone:
+
+Education:
+
+Experience:
+
+Skills:
+
+Projects:
+
+Target Role:
+
+Achievements:
+
+Languages:
+"""
+)
+
+generate = st.button("🚀 Generate Professional Resume")
+
+if generate:
+    with st.spinner("Generating AI Resume..."):
+        code = main_agent(agent,user_info)
+        st.success("Resume Generated Successfully")
+        st.components.v1.html(code,height=900,scrolling=True)
+
+
+job = st.button("💼 Show Latest Jobs")
+
+if job:
+    with st.spinner("Searching Latest Jobs..."):
+        html = get_jobs(agent)
+        st.components.v1.html(html,height=900,scrolling=True)
         
                 
                     
