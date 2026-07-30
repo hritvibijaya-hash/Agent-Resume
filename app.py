@@ -199,36 +199,36 @@ st.sidebar.image(
 )
 #============================================================================================heading==============================================================================
 st.markdown("""
-<div style="text-align:center;">
-
-<h1 style="
-color:white;
-font-size:52px;
-font-weight:800;
-margin-bottom:5px;
+<div style="
+    text-align:center;
+    background:#151515;
+    border-radius:22px;
+    padding:25px 20px 20px 20px;
 ">
 
+<h1 style="
+    color:white;
+    font-size:52px;
+    font-weight:800;
+    margin:0;
+    padding:0;
+">
 🚀 AI Resume Generator
-
 </h1>
 
 <p style="
-font-size:16px;
-color:#BDBDBD;
-margin-top:0px;
+    color:#BDBDBD;
+    font-size:16px;
+    margin:8px 0 0 0;
+    padding:0;
 ">
-
 This app helps you build customized professional resumes with latest job apply links.
-
 </p>
 
 </div>
 """, unsafe_allow_html=True)
 
-
 #=============================================================================================Image===========================================================================
-
-st.markdown("<br>", unsafe_allow_html=True)
 
 col1, col2, col3 = st.columns([1, 25, 1])
 
