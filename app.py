@@ -182,11 +182,13 @@ font-size:52px;
 font-weight:800;'>
 
 🚀 AI Resume Generator
-
-st.image("bg.png")
-
 </h1>
 """, unsafe_allow_html=True)
+
+col1, col2, col3 = st.columns([1, 2, 1])
+
+with col2:
+    st.image("bg.png", use_container_width=True)
 
 st.write("""this app helps user to build customized professional resume with latest job apply links""")
 
