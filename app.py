@@ -12,6 +12,160 @@ from PIL import Image
 import pandas as pd
 import numpy as np
 
+# =================== PREMIUM CSS =====================
+st.markdown("""
+<style>
+
+/* Main App */
+.stApp{
+    background:#090909;
+    color:white;
+}
+
+/* Main Container */
+.block-container{
+    padding-top:2rem;
+    padding-bottom:2rem;
+    padding-left:3rem;
+    padding-right:3rem;
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"]{
+    background:linear-gradient(180deg,#111111,#1b1b1b);
+    border-right:1px solid #2d2d2d;
+}
+
+/* Sidebar Title */
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3,
+section[data-testid="stSidebar"] label{
+    color:white;
+}
+
+/* Text */
+h1,h2,h3,h4,h5,h6,p,label{
+    color:white !important;
+}
+
+/* Input Boxes */
+.stTextInput input{
+    background:#1a1a1a;
+    color:white;
+    border:1px solid #444;
+    border-radius:12px;
+}
+
+textarea{
+    background:#141414 !important;
+    color:white !important;
+    border:2px solid #3b82f6 !important;
+    border-radius:15px !important;
+}
+
+/* Multi Select */
+.stMultiSelect{
+    color:white;
+}
+
+div[data-baseweb="select"]{
+    background:#151515;
+    border-radius:12px;
+}
+
+/* Success Box */
+.stSuccess{
+    background:#11331b;
+    color:#7CFC98;
+    border-radius:15px;
+}
+
+/* Error Box */
+.stError{
+    border-radius:15px;
+}
+
+/* Info */
+.stInfo{
+    border-radius:15px;
+}
+
+/* Buttons */
+.stButton>button{
+    width:100%;
+    background:linear-gradient(90deg,#2563eb,#7c3aed);
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    border:none;
+    border-radius:12px;
+    padding:12px;
+    transition:0.4s;
+}
+
+.stButton>button:hover{
+    transform:scale(1.03);
+    background:linear-gradient(90deg,#1d4ed8,#6d28d9);
+}
+
+/* Cards */
+div[data-testid="stVerticalBlock"]>div{
+    background:#141414;
+    border-radius:18px;
+    padding:18px;
+}
+
+/* Image */
+img{
+    border-radius:18px;
+}
+
+/* Scroll Bar */
+::-webkit-scrollbar{
+    width:8px;
+}
+::-webkit-scrollbar-thumb{
+    background:#3b82f6;
+    border-radius:10px;
+}
+
+/* Tags */
+span[data-baseweb="tag"]{
+    background:#2563eb !important;
+    color:white !important;
+    border-radius:20px !important;
+}
+
+/* Password Input */
+input[type="password"]{
+    background:#1a1a1a !important;
+    color:white !important;
+}
+
+/* Header */
+header{
+    background:transparent;
+}
+
+/* Toolbar */
+[data-testid="stToolbar"]{
+    right:2rem;
+}
+
+/* Footer Hide */
+footer{
+    visibility:hidden;
+}
+
+/* Menu Hide */
+#MainMenu{
+    visibility:hidden;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
 # to show web app complete page layout
 st.set_page_config(layout="wide")
 
@@ -171,3 +325,14 @@ def get_jobs(agent,Location = "Noida,Delhi",Profile = "ML Engineer"):
 #========CALLING GET JOBS====================
 # code = get_jobs(agent)
 # DISPLAY.HTML(code)
+
+if st.button("generate resume"):
+    with st.spinner("agent running"):
+        code=main_agent(agent,user_input)
+        st.html(code,width="stretch",
+                unsafe_allow_javascript=True)
+        st.divider()
+        
+                
+                    
+
