@@ -193,7 +193,7 @@ Customize your resume & job search
 </p>
 """, unsafe_allow_html=True)
 
-===================================================
+#===================================================
 st.markdown("""
 <div style="text-align:center;">
 
@@ -220,7 +220,7 @@ This app helps you build customized professional resumes with latest job apply l
 
 </div>
 """, unsafe_allow_html=True)
-=====================================================================
+#=====================================================================
 st.markdown("""
 <p style='text-align:center;
 font-size:20px;
@@ -230,8 +230,8 @@ Build ATS Friendly Resume • Latest Jobs • AI Powered
 
 </p>
 """, unsafe_allow_html=True)
-==================================================
-#=============image=================
+
+#=================================image===================
 
 st.image("bg.png")
 
