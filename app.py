@@ -176,24 +176,30 @@ st.sidebar.title("fill important detail")
 
 
 st.markdown("""
-<h1 style='text-align:center;
+<div style="text-align:center;">
+
+<h1 style="
 color:white;
 font-size:52px;
 font-weight:800;
-margin-bottom:5px;'>
+margin-bottom:5px;
+">
 
 🚀 AI Resume Generator
 
 </h1>
 
-<p style='text-align:center;
+<p style="
 font-size:16px;
 color:#BDBDBD;
-margin-top:0px;'>
+margin-top:0px;
+">
 
 This app helps you build customized professional resumes with latest job apply links.
 
 </p>
+
+</div>
 """, unsafe_allow_html=True)
 
 st.markdown("""
