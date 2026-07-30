@@ -170,12 +170,12 @@ footer{
 st.set_page_config(layout="wide")
 
 # to give title
-st.title("AI RESUME GENERATEOR")
+
 st.write("""this app helps user to build customized professional resume with latest job apply links""")
 st.image("bg.png")
 
 st.sidebar.title("fill important detail")
-st.sidebar.image("bg.png")
+
 
 st.markdown("""
 <h1 style='text-align:center;
@@ -342,6 +342,15 @@ def get_jobs(agent,Location = "Noida,Delhi",Profile = "ML Engineer"):
 
   return code
 
+
+#==========image generation===========
+
+st.markdown("<br>", unsafe_allow_html=True)
+
+col1,col2,col3 = st.columns([1,6,1])
+
+with col2:
+    st.image("bg.png", use_container_width=True)
 
 
 # ===========👇USER INFORMATION + RESUME BUTTON==================
