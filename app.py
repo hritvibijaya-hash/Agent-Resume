@@ -185,12 +185,9 @@ font-weight:800;'>
 </h1>
 """, unsafe_allow_html=True)
 
-col1, col2, col3 = st.columns([1, 2, 1])
+st.image("bg.png")
 
-with col2:
-    st.image("bg.png", use_container_width=True)
-
-st.write("""this app helps user to build customized professional resume with latest job apply links""")
+st.write("""This app helps user to build customized professional resume with latest job apply links""")
 
 st.markdown("""
 <p style='text-align:center;
