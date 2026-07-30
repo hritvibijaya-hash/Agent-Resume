@@ -187,12 +187,12 @@ font-weight:800;'>
 </h1>
 """, unsafe_allow_html=True)
 
+st.write("""this app helps user to build customized professional resume with latest job apply links""")
+
 st.markdown("""
 <p style='text-align:center;
 font-size:20px;
 color:#BDBDBD;'>
-
-st.write("""this app helps user to build customized professional resume with latest job apply links""")
 
 Build ATS Friendly Resume • Latest Jobs • AI Powered
 
