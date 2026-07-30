@@ -193,12 +193,6 @@ Customize your resume & job search
 """, unsafe_allow_html=True)
 
 # Sidebar image
-st.sidebar.image(
-    "bt.png",
-    use_container_width=True
-)
-col1, col2, col3 = st.sidebar.columns([0.3, 5.4, 0.3])
-
 with col2:
     st.image(
         "bt.png",
