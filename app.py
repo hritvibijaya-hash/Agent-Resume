@@ -185,8 +185,6 @@ font-weight:800;'>
 </h1>
 """, unsafe_allow_html=True)
 
-st.image("bg.png")
-
 st.write("""This app helps user to build customized professional resume with latest job apply links""")
 
 st.markdown("""
@@ -195,6 +193,9 @@ font-size:20px;
 color:#BDBDBD;'>
 
 Build ATS Friendly Resume • Latest Jobs • AI Powered
+
+st.image("bg.png")
+
 
 </p>
 """, unsafe_allow_html=True)
