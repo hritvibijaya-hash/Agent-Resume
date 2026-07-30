@@ -19,6 +19,10 @@ st.set_page_config(layout="wide")
 st.title("AI RESUME GENERATEOR")
 st.write("""this app helps user to build customized professional resume with latest job apply links""")
 st.image("bg.png")
+
+st.sidebar.title("fill important detail")
+st.sidebar.image("bg.png")
+
 #============API KEYS===================
 
 TAVILY_API_KEY = "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"
