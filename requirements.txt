@@ -1,5 +1,5 @@
 langchain
-langachain-google-genai
+langchain-google-genai
 langchain-groq
 tavily-python
 pytesseract
