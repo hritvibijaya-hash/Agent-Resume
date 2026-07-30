@@ -197,6 +197,13 @@ st.sidebar.image(
     "bt.png",
     use_container_width=True
 )
+col1, col2, col3 = st.sidebar.columns([0.3, 5.4, 0.3])
+
+with col2:
+    st.image(
+        "bt.png",
+        use_container_width=True
+    )
 #============================================================================================heading==============================================================================
 st.markdown("""
 <div style="text-align:center;">
