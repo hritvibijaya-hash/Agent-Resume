@@ -172,7 +172,6 @@ st.set_page_config(layout="wide")
 # to give title
 
 st.write("""this app helps user to build customized professional resume with latest job apply links""")
-st.image("bg.png")
 
 st.sidebar.title("fill important detail")
 
@@ -192,6 +191,8 @@ st.markdown("""
 <p style='text-align:center;
 font-size:20px;
 color:#BDBDBD;'>
+
+st.write("""this app helps user to build customized professional resume with latest job apply links""")
 
 Build ATS Friendly Resume • Latest Jobs • AI Powered
 
