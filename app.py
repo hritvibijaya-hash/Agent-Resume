@@ -224,16 +224,7 @@ This app helps you build customized professional resumes with latest job apply l
 
 </div>
 """, unsafe_allow_html=True)
-#=====================================================================title below main heading==================================================================================
-st.markdown("""
-<p style='text-align:center;
-font-size:20px;
-color:#BDBDBD;'>
 
-Build ATS Friendly Resume • Latest Jobs • AI Powered
-
-</p>
-""", unsafe_allow_html=True)
 
 #=============================================================================================Image===========================================================================
 
