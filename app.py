@@ -212,17 +212,12 @@ elif all(all_API):
 else:
     st.info("pass all API keys")
 
-#MULTISELECT OPTION
+#---------------MULTISELECT OPTION--------------------
 options= ["delhi","mumbai","pune","banglore","gurugram/gurgaon"]
 location= st.sidebar.multiselect("Select Location" , options=options)
 
 profile_op=["data analytics", "full-stack-dev","AI-Engineer","genAi-dev","data scientist"]
 profile=st.sidebar.multiselect("select profile", options=profile_op)
-
-#==============GET USER INFO====================
-st.markdown("""###GET USER INFO""")
-user_info=st.text_area(""" write your resume description: """)
-
 
 
 
@@ -262,8 +257,8 @@ def main_agent(agent, query):
   """This is the main agent, or leader agent
   orchestrate sub agents"""
 
-  # Giving prompt to create detailed prompt
-  # for code generation
+  # =========Giving prompt to create detailed prompt
+  # for code generation=======================
   prompt = """You are AI assistant and
   below given is prompt, your
   task is to give detailed prompt for
@@ -282,7 +277,7 @@ def main_agent(agent, query):
                                         'content':prompt}]})
   detailed_prompt = response['messages'][-1].content[-1]['text']
 
-  # SAVE PROMPT using File Handling
+  # ============SAVE PROMPT using File Handling==============
 
   with open("prompt.txt",'w') as f:
     f.write(detailed_prompt)
@@ -294,7 +289,7 @@ def main_agent(agent, query):
 
   final_prompt = prompt + detailed_prompt + user_details
 
-  # CODE GENERATION
+  # ==================CODE GENERATION=========================
 
   response = agent.invoke({"messages":[{'role':'user',
                                         'content':final_prompt}]})
@@ -342,18 +337,7 @@ def get_jobs(agent,Location = "Noida,Delhi",Profile = "ML Engineer"):
 
   return code
 
-#========CALLING GET JOBS====================
-# code = get_jobs(agent)
-# DISPLAY.HTML(code)
-
-if st.button("generate resume"):
-    with st.spinner("agent running"):
-        code=main_agent(agent,user_input)
-        st.html(code,width="stretch",
-                unsafe_allow_javascript=True)
-        st.divider()
-
-
+# ==============image setting=================
 
 
 st.markdown("<br>", unsafe_allow_html=True)
@@ -363,6 +347,7 @@ col1,col2,col3 = st.columns([1,6,1])
 with col2:
     st.image("bg.png", use_container_width=True)
 
+# ===========👇USER INFORMATION + RESUME BUTTON==================
 
 st.markdown("""
 <h2 style='color:#4F8CFF'>
@@ -397,18 +382,43 @@ Languages:
 generate = st.button("🚀 Generate Professional Resume")
 
 if generate:
-    with st.spinner("Generating AI Resume..."):
-        code = main_agent(agent,user_info)
-        st.success("Resume Generated Successfully")
-        st.components.v1.html(code,height=900,scrolling=True)
 
+    with st.spinner("Generating AI Resume..."):
+
+        code = main_agent(agent,user_info)
+
+        st.success("Resume Generated Successfully")
+
+        st.components.v1.html(
+            code,
+            height=900,
+            scrolling=True
+        )
+
+
+
+#========CALLING GET JOBS====================
+# code = get_jobs(agent)
+# DISPLAY.HTML(code)
+
+# ------------SHOW LATEST JOBS BUTTON-------------
 
 job = st.button("💼 Show Latest Jobs")
 
 if job:
+
     with st.spinner("Searching Latest Jobs..."):
+
         html = get_jobs(agent)
-        st.components.v1.html(html,height=900,scrolling=True)
+
+        st.components.v1.html(
+            html,
+            height=900,
+            scrolling=True
+        )
+
+
+
         
                 
                     
