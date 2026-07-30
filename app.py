@@ -1,4 +1,4 @@
-#========LOAD MODULES====================
+#===============================================================================LOAD MODULES================================================================================
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_groq import ChatGroq
 import langchain
@@ -12,7 +12,7 @@ from PIL import Image
 import pandas as pd
 import numpy as np
 
-# =================== PREMIUM CSS =====================
+# ======================================================================================= PREMIUM CSS =================================================================================
 st.markdown("""
 <style>
 
@@ -193,7 +193,37 @@ Customize your resume & job search
 </p>
 """, unsafe_allow_html=True)
 
-#===================================================
+#=================================================================sidebar image====================================================================================================
+st.sidebar.markdown("""
+<h2 style="
+text-align:center;
+color:#4F8CFF;
+font-size:24px;
+font-weight:700;
+margin-bottom:5px;
+">
+⚙️ Resume Settings
+</h2>
+
+<p style="
+text-align:center;
+color:#BDBDBD;
+font-size:13px;
+margin-top:0px;
+">
+Customize your resume & job search
+</p>
+""", unsafe_allow_html=True)
+
+# Sidebar image
+col1, col2, col3 = st.sidebar.columns([1, 4, 1])
+
+with col2:
+    st.image(
+        "bt.png",
+        use_container_width=True
+    )
+#============================================================================================heading==============================================================================
 st.markdown("""
 <div style="text-align:center;">
 
@@ -220,7 +250,7 @@ This app helps you build customized professional resumes with latest job apply l
 
 </div>
 """, unsafe_allow_html=True)
-#=====================================================================
+#=====================================================================title below main heading==================================================================================
 st.markdown("""
 <p style='text-align:center;
 font-size:20px;
@@ -231,7 +261,7 @@ Build ATS Friendly Resume • Latest Jobs • AI Powered
 </p>
 """, unsafe_allow_html=True)
 
-#=================================image===================
+#=============================================================================================Image===========================================================================
 
 st.image("bg.png")
 
@@ -239,7 +269,7 @@ st.image("bg.png")
 
 
 
-#==============================API KEYS===================
+#================================================================================================API KEYS==============================================================================
 
 TAVILY_API_KEY = st.sidebar.text_input("Tavily-API",type="password")
 GOOGLE_API_KEY =  st.sidebar.text_input("Gemini-API",type="password")
@@ -254,7 +284,7 @@ elif all(all_API):
 else:
     st.info("pass all API keys")
 
-#---------------MULTISELECT OPTION--------------------
+#-----------==============================================================================----MULTISELECT OPTION----=======================================================----------------
 options= ["delhi","mumbai","pune","banglore","gurugram/gurgaon"]
 location= st.sidebar.multiselect("Select Location" , options=options)
 
@@ -263,7 +293,7 @@ profile=st.sidebar.multiselect("select profile", options=profile_op)
 
 
 
-#===========MODEL CREATION==============
+#========================================================================================MODEL CREATION=====================================================================================
 model = ChatGoogleGenerativeAI(
     model = 'gemini-3.5-flash-lite',
     google_api_key = GOOGLE_API_KEY
@@ -273,7 +303,7 @@ model = ChatGoogleGenerativeAI(
 # response.content[-1]["text"]
 
 
-#===========TOOL 1======================
+#=================================================================================================TOOL 1=======================================================================
 def search_latest_news_jobs(query):
   """This function helps to fetch lastest
   news or jobs related article using
@@ -286,7 +316,7 @@ def search_latest_news_jobs(query):
   return response
 
 
-#==========Agent Creation================
+#=========================================================================================Agent Creation==============================================================================
 agent = create_agent(
     model = model,
     tools = [search_latest_news_jobs]
@@ -294,13 +324,12 @@ agent = create_agent(
 # agent
 
 
-#==============MAIN AGENT===============
+#===============================================================================================MAIN AGENT================================================================================
 def main_agent(agent, query):
   """This is the main agent, or leader agent
   orchestrate sub agents"""
 
-  # =========Giving prompt to create detailed prompt
-  # for code generation=======================
+  # ===============================================================================Giving prompt to create detailed prompt for code generation===========================================
   prompt = """You are AI assistant and
   below given is prompt, your
   task is to give detailed prompt for
@@ -319,7 +348,7 @@ def main_agent(agent, query):
                                         'content':prompt}]})
   detailed_prompt = response['messages'][-1].content[-1]['text']
 
-  # ============SAVE PROMPT using File Handling==============
+  # ================================================================================SAVE PROMPT using File Handling========================================================================
 
   with open("prompt.txt",'w') as f:
     f.write(detailed_prompt)
@@ -331,7 +360,7 @@ def main_agent(agent, query):
 
   final_prompt = prompt + detailed_prompt + user_details
 
-  # ==================CODE GENERATION=========================
+  # ===================================================================================CODE GENERATION==================================================================================
 
   response = agent.invoke({"messages":[{'role':'user',
                                         'content':final_prompt}]})
@@ -341,7 +370,7 @@ def main_agent(agent, query):
   return code
 
 
-#==========CALLING MAIN AGENT===============
+#==================================================================================CALLING MAIN AGENT==================================================================================
 # info = """Name: Samir Khan
 #         Email: sksamirkhan@gmail.com
 #         Education: 12th from jindal public school
@@ -357,7 +386,7 @@ def main_agent(agent, query):
 
 
 
-#===========Fetch Latest Domain related Jobs using Tavily==========
+#==========================================================================Fetch Latest Domain related Jobs using Tavily==================================================================
 
 def get_jobs(agent,Location = "Noida,Delhi",Profile = "ML Engineer"):
   Location = "Noida,Delhi"
@@ -381,7 +410,7 @@ def get_jobs(agent,Location = "Noida,Delhi",Profile = "ML Engineer"):
 
 
 
-# ===========👇USER INFORMATION + RESUME BUTTON==================
+# ================================================================================👇USER INFORMATION + RESUME BUTTON=========================================================================
 
 st.markdown("""
 <h2 style='color:#4F8CFF'>
@@ -431,11 +460,11 @@ if generate:
 
 
 
-#========CALLING GET JOBS====================
+#==========================================================================CALLING GET JOBS========================================================================================
 # code = get_jobs(agent)
 # DISPLAY.HTML(code)
 
-# ------------SHOW LATEST JOBS BUTTON-------------
+# -------=========================================================================-----SHOW LATEST JOBS BUTTON-------=========================================================------
 
 job = st.button("💼 Show Latest Jobs")
 
@@ -450,10 +479,3 @@ if job:
             height=900,
             scrolling=True
         )
-
-
-
-        
-                
-                    
-
