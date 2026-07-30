@@ -169,31 +169,8 @@ footer{
 # to show web app complete page layout
 st.set_page_config(layout="wide")
 
-# ===============to give title==================
+# =================================================================to give title and sidebar image====================================================================================
 
-
-st.sidebar.markdown("""
-<h2 style="
-text-align:center;
-color:#4F8CFF;
-font-size:24px;
-font-weight:700;
-margin-bottom:5px;
-">
-⚙️ Resume Settings
-</h2>
-
-<p style="
-text-align:center;
-color:#BDBDBD;
-font-size:13px;
-margin-top:0px;
-">
-Customize your resume & job search
-</p>
-""", unsafe_allow_html=True)
-
-#=================================================================sidebar image====================================================================================================
 st.sidebar.markdown("""
 <h2 style="
 text-align:center;
@@ -216,13 +193,10 @@ Customize your resume & job search
 """, unsafe_allow_html=True)
 
 # Sidebar image
-col1, col2, col3 = st.sidebar.columns([1, 4, 1])
-
-with col2:
-    st.image(
-        "bt.png",
-        use_container_width=True
-    )
+st.sidebar.image(
+    "bt.png",
+    use_container_width=True
+)
 #============================================================================================heading==============================================================================
 st.markdown("""
 <div style="text-align:center;">
