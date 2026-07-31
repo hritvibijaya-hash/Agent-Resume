@@ -253,6 +253,11 @@ if not all(all_API):
     st.stop()
 elif all(all_API):
     st.success(" API KEYS LOADED SUCESSFULLY")
+    model = ChatGoogleGenerativeAI(
+        model = 'gemini-3.5-flash-lite',
+        google_api_key = GOOGLE_API_KEY
+    )
+
 else:
     st.info("pass all API keys")
 
@@ -266,10 +271,6 @@ profile=st.sidebar.multiselect("select profile", options=profile_op)
 
 
 #========================================================================================MODEL CREATION=====================================================================================
-model = ChatGoogleGenerativeAI(
-    model = 'gemini-3.5-flash-lite',
-    google_api_key = GOOGLE_API_KEY
-)
 
 # response = model.invoke("Hello Buddy!")
 # response.content[-1]["text"]
